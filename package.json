@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "test": "TZ=UTC jest",
-    "lint": "eslint --cache --cache-location=node_modules/.cache/ ./src/ ./__tests__/ --ext .ts,.tsx,.js",
+    "lint": "eslint --cache --cache-location=node_modules/.cache/ ./src/ --ext .ts,.tsx,.js",
     "check:types": "tsc",
     "verify": "yarn lint && yarn check:types",
     "autofix": "yarn lint --fix",
