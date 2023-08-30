@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.6
+- **Bug Fixes**
+  - epose hBreakpoints and vBreakpoints - [acb1c64]( https://github.com/royriojas/use-breakpoint-matches/commit/acb1c64 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 03:17:09
+
+    
 ## v1.2.5
 - **Bug Fixes**
   - handle missing window on the server side - [6c67655]( https://github.com/royriojas/use-breakpoint-matches/commit/6c67655 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 02:43:22
