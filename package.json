@@ -1,6 +1,6 @@
 {
   "name": "use-breakpoint-matches",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple i18n helper for key/value access",
   "main": "dist/use-breakpoint-matches.js",
   "types": "dist/use-breakpoint-matches.d.ts",
