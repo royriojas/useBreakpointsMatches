@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-shadow': ['error'],
+    'no-undef': 'off',
     'class-methods-use-this': 'off',
     'import/no-named-as-default-member': 'off',
     'import/no-named-as-default': 'off',

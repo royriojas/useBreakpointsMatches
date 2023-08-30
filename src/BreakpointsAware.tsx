@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { defaultBreakpoints, useBreakpointMatches } from './useBreakpointMatches';
 
@@ -13,7 +13,7 @@ export interface BreakpointsAwareProps<
 
 export function BreakpointsAware<T extends Record<string, number> = typeof defaultBreakpoints>(
   args: BreakpointsAwareProps<T>,
-): ReactNode {
+): JSX.Element {
   const { className, children, width = '100%', ...rest } = args;
   const { breakpoints, ...extra } = rest;
 
