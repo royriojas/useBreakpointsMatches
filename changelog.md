@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.4
+- **Bug Fixes**
+  - handle missing window on the server side - [8613e6c]( https://github.com/royriojas/use-breakpoint-matches/commit/8613e6c ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 02:41:54
+
+    
 ## v1.2.3
 - **Bug Fixes**
   - handle missing window on the server side - [0fe10c2]( https://github.com/royriojas/use-breakpoint-matches/commit/0fe10c2 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 02:36:49
