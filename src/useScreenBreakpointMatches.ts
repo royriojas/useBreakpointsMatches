@@ -45,6 +45,7 @@ const checkQuery = <T extends Record<string, number>>(
   nextKey: string,
   prop: string = 'min-width',
   screenBreakpoints: T,
+  defaultMatch: { matches: boolean } = { matches: false },
 ) => {
   const mq = createMQ(screenBreakpoints[key as keyof T], prop);
 
@@ -55,7 +56,7 @@ const checkQuery = <T extends Record<string, number>>(
     screenDim.notifyChanges();
   };
 
-  const mqResult = window.matchMedia(mq);
+  const mqResult = window?.matchMedia?.(mq) || defaultMatch;
 
   if (mqResult.addEventListener) {
     mqResult.addEventListener('change', listener);
@@ -78,7 +79,14 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
     const key = keys[i - 1];
     const nextKey = keys[i];
 
-    checkQuery(hBreakpoints, key, nextKey, 'min-width', breakpoints);
+    checkQuery(
+      hBreakpoints,
+      key,
+      nextKey,
+      'min-width',
+      breakpoints,
+      i === 1 ? { matches: true } : undefined,
+    );
   }
 };
 
