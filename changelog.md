@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.1.0
+- **Features**
+  - add breakpointMatches component - [1921db7]( https://github.com/royriojas/use-breakpoint-matches/commit/1921db7 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 01:41:16
+
+    
 ## v1.0.3
 - **Bug Fixes**
   - fix author in package.json - [ea54905]( https://github.com/royriojas/use-breakpoint-matches/commit/ea54905 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 01:34:04
