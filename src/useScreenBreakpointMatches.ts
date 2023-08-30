@@ -89,11 +89,11 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
 };
 
 export const useHorizontalBreakpoints = () => {
-  if (!vBreakpoints) {
+  if (!hBreakpoints) {
     throw new Error('initHorizontalBreakpoints must be called before useHorizontalBreakpoints');
   }
 
-  const [matches, updateMatches] = useState(vBreakpoints?.matches);
+  const [matches, updateMatches] = useState(hBreakpoints?.matches);
 
   useEffect(() => {
     return hBreakpoints.subscribeToChanges(updateMatches);
