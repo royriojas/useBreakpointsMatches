@@ -10,6 +10,10 @@ export const defaultBreakpoints = {
   xxl: 1920,
   xxl2: 2160,
 };
+
+export type MatchingBreakpoints<T extends Record<string, number> = typeof defaultBreakpoints> = {
+  [P in keyof T]?: boolean;
+};
 export interface BreakpointMatchesArgs<
   T extends Record<string, number> = typeof defaultBreakpoints,
 > {
