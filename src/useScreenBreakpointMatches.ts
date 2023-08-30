@@ -34,7 +34,7 @@ export class ScreenDimension<T> {
   }
 }
 
-let wBreakpoints: ScreenDimension<typeof defaultBreakpoints>;
+let vBreakpoints: ScreenDimension<typeof defaultBreakpoints>;
 let hBreakpoints: ScreenDimension<typeof defaultBreakpoints>;
 
 const createMQ = (size: number, prop: string = 'min-width') => `(${prop}: ${size}px)`;
@@ -77,7 +77,7 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
 ) => {
   const { breakpoints = defaultBreakpoints } = args || {};
 
-  wBreakpoints = new ScreenDimension<T>({});
+  hBreakpoints = new ScreenDimension<T>({});
 
   const keys = Object.keys(breakpoints);
   for (let i = 1; i < keys.length; i += 1) {
@@ -89,11 +89,11 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
 };
 
 export const useHorizontalBreakpoints = () => {
-  if (!wBreakpoints) {
+  if (!vBreakpoints) {
     throw new Error('initHorizontalBreakpoints must be called before useHorizontalBreakpoints');
   }
 
-  const [matches, updateMatches] = useState(wBreakpoints?.matches);
+  const [matches, updateMatches] = useState(vBreakpoints?.matches);
 
   useEffect(() => {
     return hBreakpoints.subscribeToChanges(updateMatches);
@@ -107,26 +107,26 @@ export const initVerticalBreakpoints = <T extends Record<string, number>>(
 ) => {
   const { breakpoints = defaultBreakpoints } = args || {};
 
-  hBreakpoints = new ScreenDimension<T>({});
+  vBreakpoints = new ScreenDimension<T>({});
 
   const keys = Object.keys(breakpoints);
   for (let i = 1; i < keys.length; i += 1) {
     const key = keys[i - 1];
     const nextKey = keys[i];
 
-    checkQuery(hBreakpoints, key, nextKey, 'min-height', breakpoints, { matches: i === 1 });
+    checkQuery(vBreakpoints, key, nextKey, 'min-height', breakpoints, { matches: i === 1 });
   }
 };
 
 export const useVerticalBreakpoints = () => {
-  if (!hBreakpoints) {
+  if (!vBreakpoints) {
     throw new Error('initVerticalBreakpoints must be called before useVerticalBreakpoints');
   }
 
-  const [matches, updateMatches] = useState(hBreakpoints?.matches);
+  const [matches, updateMatches] = useState(vBreakpoints?.matches);
 
   useEffect(() => {
-    return hBreakpoints.subscribeToChanges(updateMatches);
+    return vBreakpoints.subscribeToChanges(updateMatches);
   }, []);
 
   return matches;
