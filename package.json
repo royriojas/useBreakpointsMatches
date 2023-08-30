@@ -1,6 +1,6 @@
 {
   "name": "use-breakpoint-matches",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Simple hook to detect changes on the width of a container when matches a given breakpoint and also for the global breakpoints",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
