@@ -37,6 +37,9 @@ export class ScreenDimension<T> {
 let vBreakpoints: ScreenDimension<typeof defaultBreakpoints>;
 let hBreakpoints: ScreenDimension<typeof defaultBreakpoints>;
 
+export const getHBreakpoints = () => hBreakpoints;
+export const getVBreakpoints = () => vBreakpoints;
+
 const createMQ = (size: number, prop: string = 'min-width') => `(${prop}: ${size}px)`;
 
 const checkQuery = <T extends Record<string, number>>(
