@@ -23,7 +23,7 @@ const genId = (() => {
   };
 })();
 
-export const useBreakpointsMatches = <T extends Record<string, number>>(
+export const useBreakpointMatches = <T extends Record<string, number>>(
   args?: BreakpointMatchesArgs<T>,
 ) => {
   const { breakpoints = defaultBreakpoints } = args || {};

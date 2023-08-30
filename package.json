@@ -1,9 +1,9 @@
 {
   "name": "use-breakpoint-matches",
   "version": "1.1.0",
-  "description": "Simple i18n helper for key/value access",
-  "main": "dist/use-breakpoint-matches.js",
-  "types": "dist/use-breakpoint-matches.d.ts",
+  "description": "Simple hook to detect changes on the width of a container when matches a given breakpoint and also for the global breakpoints",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "author": "royriojas",
   "keywords": [

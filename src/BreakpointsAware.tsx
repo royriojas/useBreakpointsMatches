@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { defaultBreakpoints, useBreakpointsMatches } from './useBreakpointsMatches';
+import { defaultBreakpoints, useBreakpointMatches } from './useBreakpointMatches';
 
 export interface BreakpointsAwareProps<
   T extends Record<string, number> = typeof defaultBreakpoints,
@@ -17,7 +17,7 @@ export function WidthAware<T extends Record<string, number> = typeof defaultBrea
   const { className, children, width = '100%', ...rest } = args;
   const { breakpoints, ...extra } = rest;
 
-  const { setRef, widthMap } = useBreakpointsMatches({ breakpoints });
+  const { setRef, widthMap } = useBreakpointMatches({ breakpoints });
 
   return (
     <div ref={setRef} className={className} style={{ width }} {...extra}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createEmitter } from './emitter';
-import { BreakpointMatchesArgs, defaultBreakpoints } from './useBreakpointsMatches';
+import { BreakpointMatchesArgs, defaultBreakpoints } from './useBreakpointMatches';
 
 interface EmitterInterface<T> {
   onChange: (matches: {
