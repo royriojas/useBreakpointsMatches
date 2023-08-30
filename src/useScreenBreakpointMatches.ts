@@ -51,10 +51,15 @@ const checkQuery = <T extends Record<string, number>>(
 
   // eslint-disable-next-line no-loop-func
   const listener = (e: MediaQueryListEvent | MediaQueryList) => {
-    if (screenDim.matches[nextKey as keyof T] === e.matches) return;
-    screenDim.matches[nextKey as keyof T] = e.matches;
+    if (screenDim.matches[nextKey as keyof T] === e?.matches) return;
+    screenDim.matches[nextKey as keyof T] = e?.matches;
     screenDim.notifyChanges();
   };
+
+  if (typeof window === 'undefined') {
+    listener(defaultMatch as MediaQueryListEvent | MediaQueryList);
+    return;
+  }
 
   const mqResult = window?.matchMedia?.(mq) || defaultMatch;
 
@@ -116,7 +121,14 @@ export const initVerticalBreakpoints = <T extends Record<string, number>>(
     const key = keys[i - 1];
     const nextKey = keys[i];
 
-    checkQuery(hBreakpoints, key, nextKey, 'min-height', breakpoints);
+    checkQuery(
+      hBreakpoints,
+      key,
+      nextKey,
+      'min-height',
+      breakpoints,
+      i === 1 ? { matches: true } : undefined,
+    );
   }
 };
 
