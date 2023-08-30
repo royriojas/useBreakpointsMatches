@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.7
+- **Bug Fixes**
+  - expose BreakpointsAware - [760b6c9]( https://github.com/royriojas/use-breakpoint-matches/commit/760b6c9 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 03:27:30
+
+    
 ## v1.2.6
 - **Bug Fixes**
   - epose hBreakpoints and vBreakpoints - [acb1c64]( https://github.com/royriojas/use-breakpoint-matches/commit/acb1c64 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 03:17:09
