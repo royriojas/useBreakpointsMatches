@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.10
+- **Bug Fixes**
+  - expose MatchingBreakpoints type - [ed1387f]( https://github.com/royriojas/use-breakpoint-matches/commit/ed1387f ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 16:49:49
+
+    
 ## v1.2.8
 - **Bug Fixes**
   - expose BreakpointsAware - [1734826]( https://github.com/royriojas/use-breakpoint-matches/commit/1734826 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 03:31:50
