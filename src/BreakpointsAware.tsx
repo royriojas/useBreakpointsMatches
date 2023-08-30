@@ -11,7 +11,7 @@ export interface BreakpointsAwareProps<
   children: (args: { [P in keyof T]: boolean }) => React.ReactNode;
 }
 
-export function WidthAware<T extends Record<string, number> = typeof defaultBreakpoints>(
+export function BreakpointsAware<T extends Record<string, number> = typeof defaultBreakpoints>(
   args: BreakpointsAwareProps<T>,
 ): ReactNode {
   const { className, children, width = '100%', ...rest } = args;
