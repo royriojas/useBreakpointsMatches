@@ -5,7 +5,7 @@
   "main": "dist/use-breakpoint-matches.js",
   "types": "dist/use-breakpoint-matches.d.ts",
   "license": "MIT",
-  "author": "Roy Riojas",
+  "author": "royriojas",
   "keywords": [
     "responsive helpers",
     "breakpoints",
