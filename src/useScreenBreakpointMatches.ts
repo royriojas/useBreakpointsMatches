@@ -84,14 +84,7 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
     const key = keys[i - 1];
     const nextKey = keys[i];
 
-    checkQuery(
-      hBreakpoints,
-      key,
-      nextKey,
-      'min-width',
-      breakpoints,
-      i === 1 ? { matches: true } : undefined,
-    );
+    checkQuery(hBreakpoints, key, nextKey, 'min-width', breakpoints, { matches: i === 1 });
   }
 };
 
@@ -121,14 +114,7 @@ export const initVerticalBreakpoints = <T extends Record<string, number>>(
     const key = keys[i - 1];
     const nextKey = keys[i];
 
-    checkQuery(
-      hBreakpoints,
-      key,
-      nextKey,
-      'min-height',
-      breakpoints,
-      i === 1 ? { matches: true } : undefined,
-    );
+    checkQuery(hBreakpoints, key, nextKey, 'min-height', breakpoints, { matches: i === 1 });
   }
 };
 
