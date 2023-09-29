@@ -132,11 +132,13 @@ export const useBreakpointMatches = <T extends Record<string, number>>(
         sentry.setAttribute('class', ids.sentry);
 
         sentry.innerHTML = `<div class="${ids.sentryContainer}">
-          ${Object.keys(breakpoints).map((key) => {
-            return `<div data-size-label="${key}" class="${ids.sentryItem}">
+          ${Object.keys(breakpoints)
+            .map((key) => {
+              return `<div data-size-label="${key}" class="${ids.sentryItem}">
               <span>key</span>
             </div>`;
-          })}
+            })
+            .join('')}
         </div>`;
 
         el.prepend(sentry);

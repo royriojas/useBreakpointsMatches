@@ -99,7 +99,9 @@ export const useHorizontalBreakpoints = () => {
   const [matches, updateMatches] = useState(hBreakpoints?.matches);
 
   useEffect(() => {
-    return hBreakpoints.subscribeToChanges(updateMatches);
+    return hBreakpoints.subscribeToChanges(() => {
+      updateMatches({ ...hBreakpoints.matches });
+    });
   }, []);
 
   return matches;
@@ -129,7 +131,9 @@ export const useVerticalBreakpoints = () => {
   const [matches, updateMatches] = useState(vBreakpoints?.matches);
 
   useEffect(() => {
-    return vBreakpoints.subscribeToChanges(updateMatches);
+    return vBreakpoints.subscribeToChanges(() => {
+      updateMatches({ ...vBreakpoints.matches });
+    });
   }, []);
 
   return matches;
