@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.11
+- **Bug Fixes**
+  - react by mutating the state - [f733d79]( https://github.com/royriojas/use-breakpoint-matches/commit/f733d79 ), [Roy Riojas](https://github.com/Roy Riojas), 28/09/2023 23:41:08
+
+    
 ## v1.2.10
 - **Bug Fixes**
   - expose MatchingBreakpoints type - [ed1387f]( https://github.com/royriojas/use-breakpoint-matches/commit/ed1387f ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2023 16:49:49
