@@ -84,6 +84,9 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
   hBreakpoints = new ScreenDimension<T>({});
 
   const keys = Object.keys(breakpoints);
+
+  hBreakpoints.matches[keys[0] as keyof typeof hBreakpoints.matches] = true;
+
   for (let i = 1; i < keys.length; i += 1) {
     const key = keys[i - 1];
     const nextKey = keys[i];
@@ -92,18 +95,20 @@ export const initHorizontalBreakpoints = <T extends Record<string, number>>(
   }
 };
 
-export const useHorizontalBreakpoints = () => {
+export const useHorizontalBreakpoints = <T extends Record<string, number>>() => {
   if (!hBreakpoints) {
     throw new Error('initHorizontalBreakpoints must be called before useHorizontalBreakpoints');
   }
 
-  const [matches, updateMatches] = useState(hBreakpoints?.matches);
+  const brk = hBreakpoints as ScreenDimension<T>;
+
+  const [matches, updateMatches] = useState(brk?.matches);
 
   useEffect(() => {
     return hBreakpoints.subscribeToChanges(() => {
-      updateMatches({ ...hBreakpoints.matches });
+      updateMatches({ ...brk.matches });
     });
-  }, []);
+  }, [brk]);
 
   return matches;
 };
@@ -124,18 +129,20 @@ export const initVerticalBreakpoints = <T extends Record<string, number>>(
   }
 };
 
-export const useVerticalBreakpoints = () => {
+export const useVerticalBreakpoints = <T extends Record<string, number>>() => {
   if (!vBreakpoints) {
     throw new Error('initVerticalBreakpoints must be called before useVerticalBreakpoints');
   }
 
-  const [matches, updateMatches] = useState(vBreakpoints?.matches);
+  const brk = hBreakpoints as ScreenDimension<T>;
+
+  const [matches, updateMatches] = useState(brk?.matches);
 
   useEffect(() => {
     return vBreakpoints.subscribeToChanges(() => {
-      updateMatches({ ...vBreakpoints.matches });
+      updateMatches({ ...brk.matches });
     });
-  }, []);
+  }, [brk]);
 
   return matches;
 };
@@ -158,9 +165,12 @@ export const initScreenBreakpoints = <
   initVerticalBreakpoints({ breakpoints: args?.vBreakpoints });
 };
 
-export const useScreenBreakpoints = () => {
-  const hMatches = useHorizontalBreakpoints();
-  const vMatches = useVerticalBreakpoints();
+export const useScreenBreakpoints = <
+  T extends Record<string, number>,
+  K extends Record<string, number>,
+>() => {
+  const hMatches = useHorizontalBreakpoints<T>();
+  const vMatches = useVerticalBreakpoints<K>();
 
   const cnByMatchesH = useCallback(
     (args: { [P in keyof typeof hMatches]?: string }): string => {

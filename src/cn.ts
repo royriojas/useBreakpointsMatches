@@ -1,4 +1,4 @@
-export const cnPerMatches = <T extends Record<string, boolean>>(
+export const cnPerMatches = <T extends Record<string, boolean | undefined>>(
   matches: T,
   classMap: Partial<Record<keyof T, string>>,
 ) => {
