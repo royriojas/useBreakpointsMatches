@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { cnPerMatches } from './cn';
 import { createEmitter } from './emitter';
 import { BreakpointMatchesArgs, defaultBreakpoints } from './useBreakpointMatches';
 
@@ -161,8 +162,24 @@ export const useScreenBreakpoints = () => {
   const hMatches = useHorizontalBreakpoints();
   const vMatches = useVerticalBreakpoints();
 
+  const cnByMatchesH = useCallback(
+    (args: { [P in keyof typeof hMatches]?: string }): string => {
+      return cnPerMatches(hMatches ?? {}, args);
+    },
+    [hMatches],
+  );
+
+  const cnByMatchesV = useCallback(
+    (args: { [P in keyof typeof vMatches]?: string }): string => {
+      return cnPerMatches(vMatches ?? {}, args);
+    },
+    [vMatches],
+  );
+
   return {
     hMatches,
+    cnByMatchesH,
+    cnByMatchesV,
     vMatches,
   };
 };

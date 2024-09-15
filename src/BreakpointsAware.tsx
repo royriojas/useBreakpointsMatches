@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { cnPerMatches } from './cn';
 
 import { defaultBreakpoints, useBreakpointMatches } from './useBreakpointMatches';
 
@@ -8,7 +9,10 @@ export interface BreakpointsAwareProps<
   breakpoints?: T;
   width?: number | string;
   className?: string;
-  children: (args: { [P in keyof T]: boolean }) => React.ReactNode;
+  children: (childrenArgs: {
+    matches: { [P in keyof T]?: boolean };
+    cn: (args: { [P in keyof T]?: string }) => string;
+  }) => React.ReactNode;
 }
 
 export function BreakpointsAware<T extends Record<string, number> = typeof defaultBreakpoints>(
@@ -19,9 +23,16 @@ export function BreakpointsAware<T extends Record<string, number> = typeof defau
 
   const { setRef, widthMap } = useBreakpointMatches({ breakpoints });
 
+  const cn = useCallback(
+    (cnArgs: { [P in keyof T]?: string }): string => {
+      return cnPerMatches(widthMap ?? {}, cnArgs);
+    },
+    [widthMap],
+  );
+
   return (
     <div ref={setRef} className={className} style={{ width }} {...extra}>
-      {widthMap && children(widthMap)}
+      {widthMap && children({ matches: widthMap, cn })}
     </div>
   );
 }
