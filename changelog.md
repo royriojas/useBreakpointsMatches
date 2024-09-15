@@ -1,5 +1,10 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.14
+- **Bug Fixes**
+  - fix useScreenBreakpoints method - [fc04ca3]( https://github.com/royriojas/use-breakpoint-matches/commit/fc04ca3 ), [Roy Riojas](https://github.com/Roy Riojas), 15/09/2024 03:16:09
+
+    
 ## v1.2.13
 - **Bug Fixes**
   - fix wrong parameter being provided to initScreenBreakpoints - [49eaee4]( https://github.com/royriojas/use-breakpoint-matches/commit/49eaee4 ), [Roy Riojas](https://github.com/Roy Riojas), 15/09/2024 01:51:00
