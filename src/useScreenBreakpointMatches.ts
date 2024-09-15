@@ -154,8 +154,8 @@ export const initScreenBreakpoints = <
 >(
   args?: ScreenBreakpoints<T, K>,
 ) => {
-  initHorizontalBreakpoints(args?.hBreakpoints);
-  initVerticalBreakpoints(args?.vBreakpoints);
+  initHorizontalBreakpoints({ breakpoints: args?.hBreakpoints });
+  initVerticalBreakpoints({ breakpoints: args?.vBreakpoints });
 };
 
 export const useScreenBreakpoints = () => {
