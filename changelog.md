@@ -1,5 +1,15 @@
 
 # use-breakpoint-matches - Changelog
+## v1.2.13
+- **Bug Fixes**
+  - fix wrong parameter being provided to initScreenBreakpoints - [49eaee4]( https://github.com/royriojas/use-breakpoint-matches/commit/49eaee4 ), [Roy Riojas](https://github.com/Roy Riojas), 15/09/2024 01:51:00
+
+    
+## v1.2.12
+- **Features**
+  - streamlining the helpers api - [2a6b384]( https://github.com/royriojas/use-breakpoint-matches/commit/2a6b384 ), [Roy Riojas](https://github.com/Roy Riojas), 15/09/2024 00:15:10
+
+    
 ## v1.2.11
 - **Bug Fixes**
   - react by mutating the state - [f733d79]( https://github.com/royriojas/use-breakpoint-matches/commit/f733d79 ), [Roy Riojas](https://github.com/Roy Riojas), 28/09/2023 23:41:08
